@@ -1,7 +1,9 @@
-import {DISH_REQUEST, DISH_SUCCESS} from "../actions/actions-type";
+import {DISH_SUCCESS} from "../actions/actions-type";
 
 const initialState = {
-    dishes: {}
+    dishes: {},
+    loading: false,
+
 };
 
 const reducer = (state = initialState, action) => {
@@ -12,6 +14,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 dishes: action.data
             };
+
         default:
             return state;
     }
