@@ -1,9 +1,10 @@
-import {DISH_SUCCESS} from "../actions/actions-type";
+import {DISH_SUCCESS, MODAL_DISHES} from "../actions/actions-type";
 
 const initialState = {
     dishes: {},
     loading: false,
-
+    modalVisible: false,
+    totalPrice: 0
 };
 
 const reducer = (state = initialState, action) => {
@@ -14,7 +15,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 dishes: action.data
             };
-
+        case MODAL_DISHES:
+            return {
+                ...state,
+                modalVisible: !state.modalVisible
+            };
         default:
             return state;
     }

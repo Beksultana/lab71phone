@@ -4,10 +4,12 @@ import { StyleSheet, View } from 'react-native';
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import {Provider} from 'react-redux';
-import getDishReducer from './src/store/reducers/rootReduce';
+import getDishReducer from './src/store/reducers/rootReducer';
+import orderReducer from './src/store/reducers/order-reducer';
 
 const rootReducer = combineReducers({
     getDishesReducer: getDishReducer,
+    orderReducer: orderReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
